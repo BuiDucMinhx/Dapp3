@@ -70,6 +70,11 @@ contract FLPCrowdSale is Ownable{
             msg.sender.balance >= USDTAmount,
             "Insuficient account balance"
         );
+        require(amount > 0, "Amount is zero");
+        require(
+            token.balanceOf(address(this)) >= amount,
+            "Insuffient account balance"
+        );
         SafeERC20.safeTransferFrom(usdtToken, msg.sender, _wallet, USDTAmount);
         SafeERC20.safeTransfer(token, msg.sender, amount);
         emit BuyTokenByUSDT(msg.sender, amount);

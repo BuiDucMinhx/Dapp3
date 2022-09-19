@@ -16,7 +16,7 @@ async function main() {
 
     // deploy ICO
     const Ico = await ethers.getContractFactory("FLPCrowdSale");
-    const ico = await Ico.deploy(1000,100,'0xB4a29d7b6A6f6E652aff399FB918f554d6118869','0x5C47764DbA6E7AC41858eBf4370eb029893d0adF');
+    const ico = await Ico.deploy(1000,100,'0x61bEBd7975629537B0F3704245c050c0ab09A9AA','0x5C47764DbA6E7AC41858eBf4370eb029893d0adF');
     console.log('ICO address: ' , ico.address);
     Config.setConfig(network + '.ico', ico.address);
 
